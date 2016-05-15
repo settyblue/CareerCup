@@ -1,0 +1,8 @@
+*.metadata
+*RemoteSystemsTempFiles
+*.settings
+*bin
+*.classpath
+*.project
+*.recommenders
+*.gitignore
