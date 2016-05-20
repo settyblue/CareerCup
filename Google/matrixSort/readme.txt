@@ -33,3 +33,7 @@ valid output #3:
 One kinda trivial solution is to sort the 2D matrix column wise. For example, you can push all items into a heap and pop one after another, putting it into the matrix column after column. This would be a `O(n lg n)` time complexity where `n` is the number of items in the matrix, i.e., `n = rows*cols`. Can you design a more efficient algorithm? 
 
 Follow-up: What if all items in the same column are also required to be unique?
+--------------------------------------
+Solution:
+1. Trivial Solution 
+2. Efficient Solution by traversing diagonally in a matrix.
