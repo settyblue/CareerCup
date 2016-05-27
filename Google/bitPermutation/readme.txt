@@ -13,10 +13,19 @@
  * 0 bits set, followed by 1 bits set followed by 2 bits set followed by 3 bits set.
  */
 
- Solution:
- ---------
+ Solution 1:
+ -----------
  Used the following funcitons:
 
  Integer.bitCount()
  Collections.sort()
  Integer.toBinaryString()
+
+ complexity = n(logn)^2
+
+ Solution 2:
+ -----------
+ implemented without sorting but used nested for loops.
+ used Integer.bitCount()
+
+ complexity = nlogn

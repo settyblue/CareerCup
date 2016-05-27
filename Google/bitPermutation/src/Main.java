@@ -27,8 +27,9 @@ public class Main {
 		int k = 3;
 		
 		Vector<Vector<Integer>> result = new Vector<Vector<Integer>>();
-		bitPermutation(k,result);
-		print(k,result);
+		bitPermutation(k,result);//uses sorting. takes n(logn)^2 time.
+		bitPermutation2(k);//no sorting, but takes n(logn) time.
+		//print(k,result);
 	}
 
 	private static void bitPermutation(int k, Vector<Vector<Integer>> result) {
@@ -62,5 +63,24 @@ public class Main {
 			System.out.println(binString);
 		}
 	}
+	
+
+	private static void bitPermutation2(int k) {
+		int n = (int) Math.pow(2, k);
+		boolean[] done = new boolean[n];
+		for(int i=0; i<=k; i++){
+			for(int j=0; j<n; j++){
+				if(!done[j] && Integer.bitCount(j)==i){
+					String binString = Integer.toBinaryString(j);
+					  while (binString.length() < k) {    //pad with 16 0's
+					        binString = "0" + binString;
+					  }
+					System.out.println(binString);
+					done[j] = true;
+				}
+			}
+		}
+	}
+
 
 }
