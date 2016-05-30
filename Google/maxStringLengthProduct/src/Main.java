@@ -25,9 +25,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		String[] array = {"ABCW", "BAZ", "FOO", "BAR", "XTSN", "ABCDEF"};//Answer = 24.
-		System.out.println("Maximum product is : "+maxProduct(array));
+		//System.out.println("Maximum product is : "+maxProduct(array));
+		System.out.println("Maximum product is : "+maxProduct2(array));
 	}
-	
+
 	//Brute force implementation.
 	private static int maxProduct(String[] array) {
 		int maxProduct=1;
@@ -41,7 +42,7 @@ public class Main {
 		}
 		
 		for(int i=0; i<list.size(); i++){
-			for(int j=1; j<list.size(); j++){
+			for(int j=i+1; j<list.size(); j++){
 				HashSet<Character> intersection = new HashSet<Character>(list.get(i)); // use the copy constructor
 				intersection.retainAll(list.get(j));
 				if(intersection.size()==0){
@@ -51,5 +52,29 @@ public class Main {
 		}
 		return maxProduct;
 	}
-
+	
+	//Implemented using bit vector.
+	private static int maxProduct2(String[] array) {
+		int maxProduct = 0;
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		for(int i=0; i<array.length; i++){
+			int code=0;
+			String s = array[i].toLowerCase();
+			for(int j=0; j<array[i].length(); j++){
+				code = code | (1 << (s.charAt(j)-'a'));
+			}
+			list.add(code);
+		}
+		
+		for(int i=0; i<list.size(); i++){
+			for(int j=i+1; j<list.size(); j++){
+				if((list.get(i) & list.get(j)) == 0){
+					maxProduct = Math.max(maxProduct, array[i].length()*array[j].length());
+				}
+			}
+		}
+		
+		return maxProduct;
+	}
+	
 }
