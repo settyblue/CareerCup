@@ -17,3 +17,7 @@
  -----------
  Using brute force method.
  used character hashset and then compared different hashes to see common characters between string.
+
+ Solution 2:
+ -----------
+ Implemented using bit vector.
