@@ -18,7 +18,8 @@ import java.util.Comparator;
 public class Main {
 
 	public static void main(String[] args) {
-		int[] array = {9, 918, 917};
+		//int[] array = {9, 918, 917}; 
+		int[] array = {1, 112, 113};
 		System.out.println("Concatenated maximum number is "+maxNumber(array));
 
 	}
