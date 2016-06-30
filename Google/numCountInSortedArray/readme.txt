@@ -9,6 +9,6 @@
  Solution:
  ---------
  Implemented using binary search.
- Time Complexity = O(n)
+ Time Complexity = O(nlogn)
 
 
