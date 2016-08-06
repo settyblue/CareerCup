@@ -1,6 +1,7 @@
 /**
  * https://www.careercup.com/question?id=5763139615326208
- * 
+ * http://www.geeksforgeeks.org/find-if-given-matrix-is-toeplitz-or-not/
+ *
  * A matrix is "Toepliz" if each descending diagonal from left to right is constant. Given an M x N matrix write the method isToepliz to determine if a matrix is Toepliz. 
  * 
  * Example: 
